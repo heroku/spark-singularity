@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# bin/detect
+# heroku inline buildpack
+
+
+echo "Spark Singularity"
+exit 0

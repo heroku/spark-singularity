@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# bin/master-url
+# output the spark master url; implicitly local for Spark in a single dyno
+
+set -e
+
+echo "spark://127.0.0.1:7077"

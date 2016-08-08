@@ -1,0 +1,33 @@
+{
+  "name": "spark-singularity",
+  "description": "Spark master & a worker running together in a single dyno; includes auth + API proxy",
+  "keywords": [
+    "spark"
+  ],
+  "repository": "https://github.com/heroku/spark-singularity",
+  "env": {
+    "SPARK_BASIC_AUTH": {
+      "description": "Basic username/password authentication values; format `username:{PLAIN}password`",
+      "value": "spark:{PLAIN}replace-me-with-unique-password"
+    },
+    "SPARK_DAEMON_MEMORY": {
+      "description": "Fit x2 this value into available memory; master + worker",
+      "value":  "512m"
+    },
+    "LOG_LEVEL": {
+      "description": "log4j log level for spark",
+      "value":  "INFO"
+    }
+  },
+  "addons": [
+    {
+      "plan": "bucketeer",
+      "as": "SPARK_S3"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "http://github.com/heroku/spark-singularity.git"
+    }
+  ]
+}
