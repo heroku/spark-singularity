@@ -27,7 +27,7 @@
   ],
   "buildpacks": [
     {
-      "url": "http://github.com/heroku/spark-singularity.git"
+      "url": "https://github.com/heroku/spark-singularity.git"
     }
   ]
 }
