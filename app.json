@@ -6,7 +6,7 @@
   ],
   "repository": "https://github.com/heroku/spark-singularity",
   "env": {
-    "SPARK_BASIC_AUTH": {
+    "SPACE_PROXY_BASIC_AUTH": {
       "description": "Basic username/password authentication values; format `username:{PLAIN}password`",
       "value": "spark:{PLAIN}replace-me-with-unique-password"
     },
