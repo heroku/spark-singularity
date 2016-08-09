@@ -62,7 +62,10 @@ else
 fi
 
 echo "=====> Overlaying Spark Singularity config on Spark in Space"
-cp -r "$BP_DIR/.profile.d/*" "$BUILD_DIR/.profile.d/"
-cp -r "$BP_DIR/conf/*" "$BUILD_DIR/conf/"
-cp -r "$BP_DIR/Procfile*" "$BUILD_DIR/"
-cp -r "$BP_DIR/bin/master-url" "$BUILD_DIR/bin/master-url"
+cp $BP_DIR/Procfile* $BUILD_DIR/
+mkdir -p $BUILD_DIR/.profile.d
+cp $BP_DIR/.profile.d/* $BUILD_DIR/.profile.d/
+mkdir -p $BUILD_DIR/conf
+cp $BP_DIR/conf/* $BUILD_DIR/conf/
+mkdir -p $BUILD_DIR/bin
+cp $BP_DIR/bin/master-url $BUILD_DIR/bin/master-url
