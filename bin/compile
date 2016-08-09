@@ -71,3 +71,4 @@ mkdir -p $BUILD_DIR/bin
 cp $BP_DIR/bin/master-url $BUILD_DIR/bin/
 cp $BP_DIR/bin/spark-master $BUILD_DIR/bin/
 cp $BP_DIR/bin/spark-worker $BUILD_DIR/bin/
+cp $BUILD_DIR/space-proxy/bin/space-proxy $BUILD_DIR/bin/
