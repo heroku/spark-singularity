@@ -62,15 +62,19 @@ else
 fi
 
 echo "=====> Overlaying Spark Singularity config on Spark in Space"
-cp $BP_DIR/Procfile* $BUILD_DIR/
+mv $BP_DIR/Procfile* $BUILD_DIR/
+
 mkdir -p $BUILD_DIR/.profile.d
-cp $BP_DIR/.profile.d/* $BUILD_DIR/.profile.d/
+mv $BP_DIR/.profile.d/* $BUILD_DIR/.profile.d/
+
 mkdir -p $BUILD_DIR/conf
-cp $BP_DIR/conf/* $BUILD_DIR/conf/
+mv $BP_DIR/conf/* $BUILD_DIR/conf/
+
 # Overlay the special space-proxy/ prefix
 mkdir -p $BUILD_DIR/space-proxy/conf/
 mv $BUILD_DIR/conf/nginx.conf.erb $BUILD_DIR/space-proxy/conf/
+
 mkdir -p $BUILD_DIR/bin
-cp $BP_DIR/bin/master-url $BUILD_DIR/bin/
-cp $BP_DIR/bin/spark-master $BUILD_DIR/bin/
-cp $BP_DIR/bin/spark-worker $BUILD_DIR/bin/
+mv $BP_DIR/bin/master-url $BUILD_DIR/bin/
+mv $BP_DIR/bin/spark-master $BUILD_DIR/bin/
+mv $BP_DIR/bin/spark-worker $BUILD_DIR/bin/
