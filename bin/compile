@@ -68,4 +68,6 @@ cp $BP_DIR/.profile.d/* $BUILD_DIR/.profile.d/
 mkdir -p $BUILD_DIR/conf
 cp $BP_DIR/conf/* $BUILD_DIR/conf/
 mkdir -p $BUILD_DIR/bin
-cp $BP_DIR/bin/master-url $BUILD_DIR/bin/master-url
+cp $BP_DIR/bin/master-url $BUILD_DIR/bin/
+cp $BP_DIR/bin/spark-master $BUILD_DIR/bin/
+cp $BP_DIR/bin/spark-worker $BUILD_DIR/bin/
