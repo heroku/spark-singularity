@@ -33,7 +33,7 @@ http {
 
     location  /rest {
       auth_basic           "spark-singularity";
-      auth_basic_user_file /app/nginx/conf/htpasswd;
+      auth_basic_user_file /app/space-proxy/nginx/conf/htpasswd;
       # Implicit localhost for single dyno; 
       # trailing slash to strip path prefix
       proxy_pass "http://127.0.0.1:6066/";
@@ -43,7 +43,7 @@ http {
 
     location  /worker {
       auth_basic           "spark-singularity";
-      auth_basic_user_file /app/nginx/conf/htpasswd;
+      auth_basic_user_file /app/space-proxy/nginx/conf/htpasswd;
       # Implicit localhost for single dyno; 
       # trailing slash to strip path prefix
       proxy_pass "http://127.0.0.1:4040/";
@@ -53,7 +53,7 @@ http {
 
     location  / {
       auth_basic           "spark-singularity";
-      auth_basic_user_file /app/nginx/conf/htpasswd;
+      auth_basic_user_file /app/space-proxy/nginx/conf/htpasswd;
       # Implicit localhost for single dyno; 
       # no trailing slash because location is at root
       proxy_pass "http://127.0.0.1:8080";
