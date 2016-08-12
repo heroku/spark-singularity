@@ -30,6 +30,9 @@
       "url": "https://github.com/heroku/heroku-buildpack-space-proxy.git"
     },
     {
+      "url": "heroku/scala"
+    },
+    {
       "url": "https://github.com/heroku/spark-in-space.git"
     },
     {

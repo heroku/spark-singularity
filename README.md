@@ -1,3 +1,4 @@
+
 Spark Singularity
 =================
 
@@ -28,3 +29,13 @@ Because Spark Singularity is contained in a single dyno with only port 80 expose
 
 1. [Spark's REST API](http://arturmkrtchyan.com/apache-spark-hidden-rest-api), proxied at `https://your-spark-app.herokuapp.com/rest`
 2. TODO Commit Scala job source to the app to run automatically
+
+
+
+```bash
+heroku buildpacks:add -i 1 https://github.com/heroku/heroku-buildpack-space-proxy.git
+heroku buildpacks:add -i 2 heroku/scala
+heroku buildpacks:add -i 3 https://github.com/heroku/spark-in-space.git
+heroku buildpacks:add -i 4 https://github.com/dpiddy/heroku-buildpack-runit.git
+heroku buildpacks:add -i 5 https://github.com/kr/heroku-buildpack-inline.git
+```

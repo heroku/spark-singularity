@@ -1,9 +1,13 @@
 lazy val root = (project in file(".")).
   settings(
-    name := "sparkie-x",
-    version := "1.0",
+    name := "spark-singularity",
+    version := "1.0-SNAPSHOT",
     scalaVersion := "2.11.7",
-    mainClass in Compile := Some("com.heroku.SparkPi")
+    packageOptions in assembly ~= { pos =>
+      pos.filterNot { po =>
+        po.isInstanceOf[Package.MainClass]
+      }
+    }
   )
 
 val sparkVersion = "1.6.1"
