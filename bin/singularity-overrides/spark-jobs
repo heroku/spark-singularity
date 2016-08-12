@@ -5,7 +5,7 @@
 erb /app/conf/spark-defaults.conf.erb > /app/spark-home/conf/spark-defaults.conf
 erb /app/conf/log4j.properties.erb > /app/spark-home/conf/log4j.properties
 
-for JOB in $(cat $1/Jobfile); do
+for JOB in $(cat /app/Jobfile); do
   echo "buildpack=spark-singularity at=spark-jobs job=${JOB}"
   eval "/app/spark-home/bin/spark-submit --master $(/app/bin/master-url) --class ${JOB} target/scala-2.11/spark-singularity-assembly-1.0-SNAPSHOT.jar"
 done
