@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# bin/spark-master
+# generate spark-defaults.conf and start a spark worker node
+
+erb /app/conf/spark-defaults.conf.erb > /app/spark-home/conf/spark-defaults.conf
+erb /app/conf/log4j.properties.erb > /app/spark-home/conf/log4j.properties
+
+for JOB in $(cat $1/Jobfile); do
+  echo "buildpack=spark-singularity at=spark-jobs job=${JOB}"
+  eval "/app/spark-home/bin/spark-submit --master $(/app/bin/master-url) --class ${JOB} target/scala-2.11/spark-singularity-assembly-1.0-SNAPSHOT.jar"
+done
+
+# Sleep this process; exit would cause it to restart/re-run.
+while true; do sleep 10; done;
