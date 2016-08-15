@@ -14,9 +14,8 @@ val sparkVersion = "1.6.1"
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
-  "org.apache.spark" %% "spark-streaming" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
-  "org.apache.spark" %% "spark-streaming-kafka" % sparkVersion
+  "com.amazonaws" % "aws-java-sdk-s3" % "1.10.72" % "provided"
 )
 
 addCommandAlias("stage", "assembly")
