@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     name := "spark-singularity",
     version := "1.0-SNAPSHOT",
-    scalaVersion := "2.11.7",
+    scalaVersion := "2.10.5",
     packageOptions in assembly ~= { pos =>
       pos.filterNot { po =>
         po.isInstanceOf[Package.MainClass]
