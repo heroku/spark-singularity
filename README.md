@@ -46,3 +46,17 @@ heroku buildpacks:add -i 3 https://github.com/heroku/spark-in-space.git#provide-
 heroku buildpacks:add -i 4 https://github.com/dpiddy/heroku-buildpack-runit.git
 heroku buildpacks:add -i 5 https://github.com/kr/heroku-buildpack-inline.git
 ```
+
+Sample import & query
+---------------------
+
+*These processes will run out of memory without the large 14GB RAM dynos.*
+
+```bash
+heroku scale web=0
+heroku run bin/spark-local-job spark.in.space.Import -s Performance-L
+heroku scale web=1:Performance-L
+heroku logs -t
+# Once complete, avoid ongoing PL dyno charges,
+heroku scale web=0:Standard-1x
+```
