@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bin/spark-local-job
+#
+# run the spark job in the same process.
+
+job=$1
+shift
+
+erb /app/conf/spark-defaults.conf.erb > /app/spark-home/conf/spark-defaults.conf
+erb /app/conf/log4j.properties.erb > /app/spark-home/conf/log4j.properties
+
+exec /app/spark-home/bin/spark-submit --class $job /app/target/scala-2.11/spark-singularity-assembly-1.0-SNAPSHOT.jar
