@@ -15,7 +15,8 @@ val sparkVersion = "1.6.1"
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
-  "com.amazonaws" % "aws-java-sdk-s3" % "1.10.72" % "provided"
+  "com.amazonaws" % "aws-java-sdk-s3" % "1.10.72" % "provided",
+  "org.slf4j" % "slf4j-log4j12" % "1.7.10"
 )
 
 addCommandAlias("stage", "assembly")
