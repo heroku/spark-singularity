@@ -42,7 +42,7 @@ heroku create
 heroku addons:create bucketeer --as SPARK_S3
 heroku buildpacks:add -i 1 https://github.com/heroku/heroku-buildpack-space-proxy.git
 heroku buildpacks:add -i 2 heroku/scala
-heroku buildpacks:add -i 3 https://github.com/heroku/spark-in-space.git
+heroku buildpacks:add -i 3 https://github.com/heroku/spark-in-space.git#provide-bins
 heroku buildpacks:add -i 4 https://github.com/dpiddy/heroku-buildpack-runit.git
 heroku buildpacks:add -i 5 https://github.com/kr/heroku-buildpack-inline.git
 ```
