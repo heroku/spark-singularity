@@ -15,7 +15,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object Import {
   val log = org.slf4j.LoggerFactory.getLogger("Import")
-  val bucket = sys.env("SPARK_JOB_S3_BUCKET_NAME")
+  val bucket = sys.env("SPARK_S3_BUCKET_NAME")
   val n1gram = "ngrams/books/20090715/eng-us-all/1gram/data"
   val dlFile = "/app/googleNGram1Gram.lzo.sequenceLongString"
   val publicBucket = "datasets.elasticmapreduce"
@@ -33,7 +33,7 @@ object Import {
       })
       download.waitForCompletion()
     }
-    val conf = new SparkConf().setAppName("spark-in-space-app")
+    val conf = new SparkConf().setAppName("spark-singularity")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
     import sqlContext.implicits._
