@@ -33,7 +33,7 @@
       "url": "heroku/scala"
     },
     {
-      "url": "https://github.com/heroku/spark-in-space.git#provide-bins"
+      "url": "https://github.com/heroku/spark-in-space.git"
     },
     {
       "url": "https://github.com/dpiddy/heroku-buildpack-runit.git"
