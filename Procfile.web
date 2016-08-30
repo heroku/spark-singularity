@@ -1,4 +1,4 @@
 proxy: space-proxy/bin/space-proxy
-master: spark-home/bin/spark-master
-worker: spark-home/bin/spark-worker
-jobs: spark-home/bin/spark-jobs
+master: bin/spark-master
+worker: bin/spark-worker
+jobs: bin/spark-jobs
