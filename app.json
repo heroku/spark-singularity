@@ -10,9 +10,15 @@
       "description": "Basic username/password authentication values; format `username:{PLAIN}password`",
       "value": "spark:{PLAIN}replace-me-with-unique-password"
     },
-    "SPARK_DAEMON_MEMORY": {
-      "description": "Fit x2 this value into available memory; master + worker",
-      "value":  "512m"
+    "SPARK_DRIVER_MEMORY": {
+      "description": "Amount of memory to use for the driver process, i.e. where SparkContext is initialized. (This + SPARK_EXECUTOR_MEMORY must fit in dyno memory.)",
+      "value":  "2g",
+      "required": false
+    },
+    "SPARK_EXECUTOR_MEMORY": {
+      "description": "Amount of memory to use per executor process. (This + SPARK_DRIVER_MEMORY must fit in dyno memory.)",
+      "value":  "12g",
+      "required": false
     },
     "LOG_LEVEL": {
       "description": "log4j log level for spark",
