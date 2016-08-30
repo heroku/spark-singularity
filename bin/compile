@@ -26,4 +26,4 @@ BP_DIR=$(dirname $(dirname $0))
 echo "-----> Applying Spark Singularity overrides to Spark in Space"
 mv $BP_DIR/conf/singularity-overrides/spark-env.sh $BUILD_DIR/spark-home/conf/
 mv $BP_DIR/conf/singularity-overrides/space-proxy/conf/* $BUILD_DIR/space-proxy/conf/
-mv $BP_DIR/bin/singularity-overrides/* $BUILD_DIR/bin/
+mv $BP_DIR/bin/singularity-overrides/* $BUILD_DIR/spark-home/bin/
